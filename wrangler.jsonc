@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "intel-physiotherapy-website",
+  "name": "intel-physio-staging",
   "compatibility_date": "2026-06-13",
   "assets": {
     "directory": "./"
