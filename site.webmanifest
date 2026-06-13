@@ -1,0 +1,19 @@
+{
+  "name": "Intel Physiotherapy Services",
+  "short_name": "Intel Physio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/images/logo-clean.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#006878",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
