@@ -7,6 +7,29 @@ if (toggle && mobile) {
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
+
+// Keep the Product menu item consistent across desktop and mobile navigation.
+const addProductMenuItem = (container) => {
+  if (!container || container.querySelector('a[href="product.html"]')) return;
+
+  const servicesLink = container.querySelector('a[href="services.html"]');
+  if (!servicesLink) return;
+
+  const productLink = document.createElement('a');
+  productLink.href = 'product.html';
+  productLink.textContent = 'Product';
+
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  if (currentPage === 'product.html' && container.classList.contains('main-nav')) {
+    productLink.classList.add('active');
+  }
+
+  servicesLink.insertAdjacentElement('afterend', productLink);
+};
+
+addProductMenuItem(document.querySelector('.main-nav'));
+addProductMenuItem(document.querySelector('.mobile-nav'));
+
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
