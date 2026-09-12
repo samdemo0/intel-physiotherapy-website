@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <style>
-/* Home hero: keep the recovery visual prominent without consuming the full first screen. */
+/* Home hero: compact first screen without covering the artwork. */
 .home-main-image{
   height:clamp(470px,58vh,590px);
   overflow:hidden;
@@ -23,15 +23,48 @@
   max-width:none;
   margin:0;
   object-fit:cover;
-  object-position:center 48%;
+  object-position:center 50%;
+}
+/* Keep the appointment CTA in normal document flow, not over the hero artwork. */
+.home-booking-panel{
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  width:min(760px,calc(100% - 32px)) !important;
+  margin:22px auto 26px !important;
+  padding:18px 22px !important;
+  background:#fff !important;
+  border:1px solid #dbe8eb !important;
+  border-radius:16px !important;
+  box-shadow:0 10px 28px rgba(5,37,52,.10) !important;
+  text-align:center !important;
+  z-index:auto !important;
+}
+.home-booking-panel h2{
+  margin:0 0 14px !important;
+  color:#071d36 !important;
+  font-size:clamp(26px,3vw,36px) !important;
+}
+.home-booking-panel .visual-actions{
+  display:flex !important;
+  justify-content:center !important;
+  gap:14px !important;
+  flex-wrap:wrap !important;
+  margin:0 !important;
+}
+.home-single-page{
+  background:#f4fafb !important;
 }
 @media (max-width:900px){
   .home-main-image{height:clamp(430px,56vh,520px)}
-  .home-main-image img{object-position:center 48%}
+  .home-main-image img{object-position:center 50%}
 }
 @media (max-width:600px){
-  .home-main-image{height:430px}
-  .home-main-image img{object-position:center 46%}
+  .home-main-image{height:420px}
+  .home-main-image img{object-position:center 48%}
+  .home-booking-panel{width:calc(100% - 24px) !important;margin:16px auto 20px !important;padding:18px 14px !important}
+  .home-booking-panel .visual-actions{flex-direction:column !important}
+  .home-booking-panel .btn{width:100% !important}
 }
 </style>
 </head>
