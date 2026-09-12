@@ -1,4 +1,41 @@
 
+// Compact desktop header across the site without changing the mobile layout.
+const compactHeaderStyle = document.createElement('style');
+compactHeaderStyle.textContent = `
+@media (min-width: 1201px) {
+  .header-inner {
+    height: 92px !important;
+    gap: 14px !important;
+  }
+  .logo img {
+    width: 220px !important;
+  }
+  .main-nav {
+    gap: 14px !important;
+  }
+  .main-nav a {
+    padding: 30px 0 24px !important;
+    font-size: 13px !important;
+  }
+  .main-nav a.active::after,
+  .main-nav a:hover::after {
+    bottom: 16px !important;
+    height: 3px !important;
+  }
+  .header-contact {
+    gap: 9px !important;
+  }
+  .phone-top strong {
+    font-size: 17px !important;
+  }
+  .social-top a {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+`;
+document.head.appendChild(compactHeaderStyle);
+
 const toggle = document.querySelector('.menu-toggle');
 const mobile = document.querySelector('.mobile-nav');
 if (toggle && mobile) {
