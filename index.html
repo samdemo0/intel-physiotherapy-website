@@ -10,6 +10,30 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+/* Home hero: keep the recovery visual prominent without consuming the full first screen. */
+.home-main-image{
+  height:clamp(470px,58vh,590px);
+  overflow:hidden;
+  background:#071933;
+}
+.home-main-image img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  margin:0;
+  object-fit:cover;
+  object-position:center 48%;
+}
+@media (max-width:900px){
+  .home-main-image{height:clamp(430px,56vh,520px)}
+  .home-main-image img{object-position:center 48%}
+}
+@media (max-width:600px){
+  .home-main-image{height:430px}
+  .home-main-image img{object-position:center 46%}
+}
+</style>
 </head>
 <body>
 <header class="site-header">
